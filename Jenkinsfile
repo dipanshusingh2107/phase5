@@ -1,10 +1,6 @@
 pipeline{
     agent any
     
-    environment {
-        DOCKERHUB_CRED = credentials('dockerhub')
-    }
-	
 	stages{
 	    
 	    stage("SCM Checkout"){
@@ -20,7 +16,11 @@ pipeline{
 	    stage("login docker"){
           steps{
           	sh "echo $PATH"
-          	sh "docker login -u $DOCKERHUB_CRED_USR -p $DOCKERHUB_CRED_PSW"              
+          	
+          	withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DUSER', passwordVariable: 'DPASS')]) {
+        		sh "docker login -u $DUSER -p $DPASS"    
+    		}
+              
           }
       	}
       	
