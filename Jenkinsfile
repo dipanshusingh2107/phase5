@@ -16,16 +16,6 @@ pipeline{
 	            )
 	        }
 	    }
-	    
-	    stage("build docker image"){
-		   	steps{
-		   	    
-		   	    sh	"./mvnw -B -DskipTests clean package"
-		   	}
-
-          	
-     	}
-
 	                     
 	    stage("login docker"){
           steps{
@@ -33,6 +23,14 @@ pipeline{
          	sh "docker login -u $DOCKERHUB_CRED_USR -p DOCKERHUB_CRED_PSW"              
           }
       	}
+      	
+      	stage("build docker image"){
+		   	steps{
+		   	    
+		   	    sh	"./mvnw -B -DskipTests clean package"
+		   	}
+     	}
+      	
 		
 		stage("Push to docker hub"){
 		 	steps{
