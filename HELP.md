@@ -19,4 +19,4 @@ The following guides illustrate how to use some features concretely:
 * [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
 
 ### Changing some text here to check the build 
-Some changes are here
+Some changes are here for build
