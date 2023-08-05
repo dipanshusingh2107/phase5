@@ -1,11 +1,5 @@
-pipeline {
-    agent { docker { image 'maven:3.9.3-eclipse-temurin-11' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'mvn --version'
-                sh 'mvn '
-            }
-        }
-    }
+node {
+    checkout scm
+    sh './mvnw -B -DskipTests clean package'
+    docker.build("dipanshusingh2107/phase5").push()
 }
