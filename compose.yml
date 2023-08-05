@@ -41,5 +41,18 @@ services:
       - "5044:5044"
       - "5110:5110"
       - "9600:9600"
+      
+  phase5:
+    image: "dipanshusingh2107/phase5:latest"
+    container_name: "phase5"
+    depends_on:
+      - logstash
+      - kibana
+      - elasticsearch
+    
+    expose:
+      - "8081:8081"
+    ports:
+      - "8081:8081"
   
   
