@@ -16,6 +16,8 @@ services:
       - 9200
     ports:
       - "9200:9200"
+    networks:
+      - elastic
   
   kibana:
     image: "docker.elastic.co/kibana/kibana:8.8.2"
@@ -26,6 +28,9 @@ services:
       - 5601
     ports:
       - "5601:5601" 
+    networks:
+      - elastic
+      
   
   logstash:
     image: "docker.elastic.co/logstash/logstash:8.8.2"
@@ -41,6 +46,8 @@ services:
       - "5044:5044"
       - "5110:5110"
       - "9600:9600"
+    networks:
+      - elastic
       
   phase5:
     image: "dipanshusingh2107/phase5:latest"
@@ -49,10 +56,18 @@ services:
       - logstash
       - kibana
       - elasticsearch
+    links:
+      - logstash
     
     expose:
-      - "8081:8081"
+      - 8081
     ports:
       - "8081:8081"
+    networks:
+      - elastic
+      
+networks:
+  elastic:
+    driver: bridge
   
   
