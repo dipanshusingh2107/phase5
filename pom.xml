@@ -52,6 +52,7 @@
 	<distributionManagement>
 	    <repository>
 	        <id>releases</id>
+	        <url>https://hub.docker.com/repository/docker/dipanshusingh2107/phase5/general</url>
 	    </repository>
 	</distributionManagement>
 
