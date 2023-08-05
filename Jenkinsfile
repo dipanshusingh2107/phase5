@@ -31,6 +31,14 @@ pipeline{
          	sh "docker login -u $DOCKERHUB_CRED_USR -p DOCKERHUB_CRED_PSW"              
           }
       	}
+		
+		stage("Push to docker hub"){
+		 	steps{
+               
+               sh "docker push dipanshusingh2107/phase5:latest"
+           }
+                  
+         }
 
 	                    
       	stage("fun"){
@@ -40,9 +48,6 @@ pipeline{
       	    }
 
       	}
-
-
-
 	    
 	}
 
