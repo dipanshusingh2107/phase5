@@ -2,17 +2,7 @@ pipeline{
     agent any
     
 	stages{
-	    
-	    stage("SCM Checkout"){
-	        steps{
-	            git(
-	            url:"https://github.com/dipanshusingh2107/phase5.git",
-	            credentialsId:"3ad7bcf3-a35f-48db-a458-d4392b0cd51b",
-	            branch:"main"
-	            )
-	        }
-	    }
-	                     
+	                      
 	    stage("login docker"){
           steps{
           	sh "echo $PATH"
@@ -40,15 +30,7 @@ pipeline{
                   
          }
 
-	                    
-      	stage("fun"){
-      	    
-      	    steps{
-      	        sh "echo whattt"
-      	    }
-
-      	}
-	    
+	                   	    
 	}
 
 }
