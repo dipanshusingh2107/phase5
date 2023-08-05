@@ -10,7 +10,7 @@ pipeline{
 	        steps{
 	            git(
 	            url:"https://github.com/dipanshusingh2107/phase5.git",
-	            credentialId:"3ad7bcf3-a35f-48db-a458-d4392b0cd51b",
+	            credentialsId:"3ad7bcf3-a35f-48db-a458-d4392b0cd51b",
 	            branch:"main"
 	            )
 	        }
