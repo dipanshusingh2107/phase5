@@ -20,6 +20,7 @@ public class FeedbackForm {
 	@PostMapping(path="/")
 	public String postFeedbackForm(@RequestParam Map<String, String>req) {
 		System.out.println(req);
+		
 		return "submitted";
 	}
 
