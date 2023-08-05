@@ -20,7 +20,12 @@ pipeline{
 	    stage("login docker"){
           steps{
           	sh "echo $PATH"
-         	sh "docker login -u $DOCKERHUB_CRED_USR -p DOCKERHUB_CRED_PSW"              
+          	
+          	withCredentials{
+          	    sh "docker login -u $DOCKERHUB_CRED_USR -p $DOCKERHUB_CRED_PSW"  
+          	}
+
+         	            
           }
       	}
       	
