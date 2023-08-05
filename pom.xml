@@ -47,5 +47,13 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	
+	<distributionManagement>
+	    <repository>
+	        <id>releases</id>
+	    </repository>
+	</distributionManagement>
+
 
 </project>
