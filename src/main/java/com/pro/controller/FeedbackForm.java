@@ -32,7 +32,7 @@ public class FeedbackForm {
 			
 			HttpRequest request = HttpRequest.newBuilder()
 					  .POST(BodyPublishers.ofString(data.toString()))
-				      .uri(URI.create("http://localhost:5110"))
+				      .uri(URI.create("http://logstash:5110"))
 				      .header("Content-Type", "application/json")
 				      .build();
 			
