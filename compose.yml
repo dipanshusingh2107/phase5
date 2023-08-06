@@ -50,24 +50,7 @@ services:
       - "9600:9600"
     networks:
       - elastic
-      
-  phase5:
-    image: "dipanshusingh2107/phase5:latest"
-    container_name: "phase5"
-    depends_on:
-      - logstash
-      - kibana
-      - elasticsearch
-    links:
-      - logstash
-    
-    expose:
-      - 8081
-    ports:
-      - "8082:8081"
-    networks:
-      - elastic
-      
+          
 networks:
   elastic:
     driver: bridge
